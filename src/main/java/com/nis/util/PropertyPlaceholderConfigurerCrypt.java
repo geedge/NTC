@@ -30,7 +30,7 @@ public class PropertyPlaceholderConfigurerCrypt extends PropertyPlaceholderConfi
 						new String(AESUtil.decrypt(Base64.decodeBase64(devlopPassword), devlopScretKey)));
 			}
 
-			String logPassword = props.getProperty("jdbc.log.password");
+			/*String logPassword = props.getProperty("jdbc.log.password");
 			String logScretKey = props.getProperty("jdbc.log.key");
 			if (null != logPassword) {
 				props.setProperty("jdbc.log.password",
@@ -89,7 +89,7 @@ public class PropertyPlaceholderConfigurerCrypt extends PropertyPlaceholderConfi
 			if (null != clusterPassword) {
 				props.setProperty("jdbc.log.cluster.password",
 						new String(AESUtil.decrypt(Base64.decodeBase64(clusterPassword), clusterScretKey)));
-			}
+			}*/
 			
 		} catch (Exception e) {
 			e.printStackTrace();

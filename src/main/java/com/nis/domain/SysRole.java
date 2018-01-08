@@ -45,7 +45,7 @@ public class SysRole extends BaseEntity<SysRole>{
 
     private Date createTime;
     
- // 数据范围（1：所有数据；2：所在公司及以下数据；3：所在公司数据；4：所在部门及以下数据；5：所在部门数据；8：所在单位及以下数据；9：所在单位数据）
+ // 数据范围（1：所有数据；2：所在国家中心及以下数据；3：所在国家中心数据；4：所在省中心及以下数据；5：所在省中心数据；8：所在部门及以下数据；9：所在部门数据）
  	public static final Integer DATA_SCOPE_ALL = 1;
  	public static final Integer DATA_SCOPE_COMPANY_AND_CHILD = 2;
  	public static final Integer DATA_SCOPE_COMPANY = 3;

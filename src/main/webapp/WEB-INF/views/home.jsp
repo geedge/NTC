@@ -15,8 +15,7 @@
 <title>${fns:getStringProperty('productName','NIS')}</title>
 
 <style type="text/css">
-	
-	
+h3{color:#ffffff;margin:30px 0px 0px 10px;}		
 </style>
 
 
@@ -30,7 +29,8 @@
       <div id="header" class="navbar navbar-fixed-top">
      	 <div class="navbar-inner">
 	     	 <div  class="topleft">
-	    		<a href="${pageContext.request.contextPath}/"  target="_parent"><img src="${ctxStatic}/images/loginlogo.png" title="系统首页" /></a>
+	    		<a href="${pageContext.request.contextPath}/"  target="_parent">
+	    		<h3>National Firewall System</h3></a>
 	    	 </div>
 	    	 <ul class="topnav">
 	    	 	<c:forEach items="${fns:getMenuTreeList()}" var="menu" varStatus="idxStatus">

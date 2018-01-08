@@ -20,58 +20,7 @@
 		REQUEST_TIME,REQUEST_IP,
 		CONSUMER_TIME,BUSINESS_CODE,EXCEPTION_INFO,SERVER_IP
 	</sql>
-	<select id="getAllLog" parameterType="com.nis.domain.restful.ServicesRequestLogBean"
-		resultMap="ServicesRequestLogMap">
-		select
-		<include refid="Base_Column_List" />
-		from SERVICES_REQUEST_LOG
-		<where>
-			<if test="id != null">
-				AND ID = #{id}
-			</if>
-			<if test="operator != null and operator !=''">
-				AND operator = #{operator}
-			</if>
-			<if test="version != null and version !=''">
-				AND version = #{version}
-			</if>
-			<if test="opAction != null">
-				AND opAction = #{opAction}
-			</if>
-
-			<if test="opStartTime != null and opStartTime  !=''">
-				<![CDATA[AND opTime >= to_date(#{opStartTime },'yyyy-MM-dd HH24:mi:ss')]]>
-			</if>
-			<if test="opEndTime != null and opEndTime !=''">
-				<![CDATA[AND opTime < to_date(#{opEndTime},'yyyy-MM-dd HH24:mi:ss')]]>
-			</if>
-			<if test="requestContent != null and requestContent !=''">
-				AND REQUEST_CONTENT like '%'||#{requestContent}||'%'
-			</if>
-			<if test="requestStartTime != null and requestStartTime !=''">
-				<![CDATA[AND REQUEST_TIME >= to_date(#{requestStartTime},'yyyy-MM-dd HH24:mi:ss')]]>
-			</if>
-			<if test="requestEndTime != null and requestEndTime !=''">
-				<![CDATA[AND REQUEST_TIME < to_date(#{requestEndTime},'yyyy-MM-dd HH24:mi:ss')]]>
-			</if>
-			<if test="consumerTime != null">
-				AND CONSUMER_TIME = #{consumerTime}
-			</if>
-			<if test="requestIp != null and requestIp !=''">
-				AND REQUEST_IP like '%'||#{requestIp}||'%'
-			</if>
-			<if test="businessCode != null">
-				AND BUSINESS_CODE =#{businessCode}
-			</if>
-			<if test="exceptionInfo != null and exceptionInfo !=''">
-				AND EXCEPTION_INFO like '%'||#{exceptionInfo}||'%'
-			</if>
-			<if test="serverIp != null and serverIp !=''">
-				AND SERVER_IP like '%'||#{serverIp}||'%'
-			</if>
-		</where>
-		order by request_time desc
-	</select>
+	
 	<!-- <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap"> 
 		select <include refid="Base_Column_List" /> from SERVICES_REQUEST_LOG where 
 		ID = #{id,jdbcType=BIGINT} </select> -->

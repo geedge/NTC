@@ -13,7 +13,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
-import com.nis.domain.ControlLog;
 import com.nis.domain.Page;
 import com.nis.util.StringUtil;
 
@@ -44,26 +43,6 @@ public class RestfulTest {
 		Page page = restTemplate.getForObject(REST_SERVICE_URL + "logs", Page.class);
 		Assert.assertEquals(page.getList().size() > 0, true);
 		
-	}
-	
-	/**
-	 * 
-	* @Title: getLog 
-	* @Description: TODO(测试获取某条日志信息) 
-	* @param     入参
-	* @return void    返回类型
-	* @author （darnell） 
-	* @throws
-	* @date 2016年8月17日 下午5:26:55 
-	* @version V1.0
-	 */
-	@Test
-	public void getLog() {
-		RestTemplate restTemplate = new RestTemplate();
-		ControlLog log = restTemplate.getForObject(REST_SERVICE_URL + "logs/102", ControlLog.class);
-		Assert.assertEquals(StringUtil.isEmpty(log), false);
-	}
-	
-	
+	}	
 
 }

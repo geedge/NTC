@@ -78,165 +78,165 @@
 	</bean>
 
 	<!--数据源定义，采用BoneCP连接池 ,业务配置服务数据库 -->
-	<bean id="LogDataSource" parent="parentDataSource"
+	<!-- <bean id="LogDataSource" parent="parentDataSource"
 		class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.log.driver}"></property>
 		<property name="jdbcUrl" value="${jdbc.log.url}"></property>
 		<property name="username" value="${jdbc.log.username}"></property>
 		<property name="password" value="${jdbc.log.password}"></property>
-		<!-- 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0 -->
+		检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0
 		<property name="idleConnectionTestPeriodInMinutes" value="${bonecp.idleConnectionTestPeriodInMinutes}"></property>
-		<!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0 -->
+		连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0
 		<property name="idleMaxAgeInMinutes" value="${bonecp.idleMaxAgeInMinutes}" />
-		<!-- 每个分区最大的连接数 -->
+		每个分区最大的连接数
 		<property name="maxConnectionsPerPartition" value="${bonecp.maxConnectionsPerPartition}" />
-		<!-- 每个分区最小的连接数 -->
+		每个分区最小的连接数
 		<property name="minConnectionsPerPartition" value="${bonecp.minConnectionsPerPartition}" />
-		<!-- 分区数 ，默认值2，最小1，推荐3-4，视应用而定 -->
+		分区数 ，默认值2，最小1，推荐3-4，视应用而定
 		<property name="partitionCount" value="${bonecp.partitionCount}" />
-		<!-- 每次去拿数据库连接的时候一次性要拿几个,默认值：2 -->
+		每次去拿数据库连接的时候一次性要拿几个,默认值：2
 		<property name="acquireIncrement" value="${bonecp.acquireIncrement}" />
-		<!-- 缓存prepared statements的大小，默认值：0 -->
+		缓存prepared statements的大小，默认值：0
 		<property name="statementsCacheSize" value="${bonecp.statementsCacheSize}" />
 	</bean>
-	<!--数据源定义，采用BoneCP连接池 ,业务配置服务数据库 -->
+	数据源定义，采用BoneCP连接池 ,业务配置服务数据库
 	<bean id="LogCDataSource" parent="parentDataSource"
 		class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.logC.driver}"></property>
 		<property name="jdbcUrl" value="${jdbc.logC.url}"></property>
 		<property name="username" value="${jdbc.logC.username}"></property>
 		<property name="password" value="${jdbc.logC.password}"></property>
-		<!-- 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0 -->
+		检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0
 		<property name="idleConnectionTestPeriodInMinutes" value="${bonecp.idleConnectionTestPeriodInMinutes}"></property>
-		<!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0 -->
+		连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0
 		<property name="idleMaxAgeInMinutes" value="${bonecp.idleMaxAgeInMinutes}" />
-		<!-- 每个分区最大的连接数 -->
+		每个分区最大的连接数
 		<property name="maxConnectionsPerPartition" value="${bonecp.maxConnectionsPerPartition}" />
-		<!-- 每个分区最小的连接数 -->
+		每个分区最小的连接数
 		<property name="minConnectionsPerPartition" value="${bonecp.minConnectionsPerPartition}" />
-		<!-- 分区数 ，默认值2，最小1，推荐3-4，视应用而定 -->
+		分区数 ，默认值2，最小1，推荐3-4，视应用而定
 		<property name="partitionCount" value="${bonecp.partitionCount}" />
-		<!-- 每次去拿数据库连接的时候一次性要拿几个,默认值：2 -->
+		每次去拿数据库连接的时候一次性要拿几个,默认值：2
 		<property name="acquireIncrement" value="${bonecp.acquireIncrement}" />
-		<!-- 缓存prepared statements的大小，默认值：0 -->
+		缓存prepared statements的大小，默认值：0
 		<property name="statementsCacheSize" value="${bonecp.statementsCacheSize}" />
 	</bean>
-	<!--数据源定义，采用BoneCP连接池 ,业务配置服务数据库 -->
+	数据源定义，采用BoneCP连接池 ,业务配置服务数据库
 	<bean id="LogADataSource" parent="parentDataSource"
 		class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.logA.driver}"></property>
 		<property name="jdbcUrl" value="${jdbc.logA.url}"></property>
 		<property name="username" value="${jdbc.logA.username}"></property>
 		<property name="password" value="${jdbc.logA.password}"></property>
-		<!-- 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0 -->
+		检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0
 		<property name="idleConnectionTestPeriodInMinutes" value="${bonecp.idleConnectionTestPeriodInMinutes}"></property>
-		<!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0 -->
+		连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0
 		<property name="idleMaxAgeInMinutes" value="${bonecp.idleMaxAgeInMinutes}" />
-		<!-- 每个分区最大的连接数 -->
+		每个分区最大的连接数
 		<property name="maxConnectionsPerPartition" value="${bonecp.maxConnectionsPerPartition}" />
-		<!-- 每个分区最小的连接数 -->
+		每个分区最小的连接数
 		<property name="minConnectionsPerPartition" value="${bonecp.minConnectionsPerPartition}" />
-		<!-- 分区数 ，默认值2，最小1，推荐3-4，视应用而定 -->
+		分区数 ，默认值2，最小1，推荐3-4，视应用而定
 		<property name="partitionCount" value="${bonecp.partitionCount}" />
-		<!-- 每次去拿数据库连接的时候一次性要拿几个,默认值：2 -->
+		每次去拿数据库连接的时候一次性要拿几个,默认值：2
 		<property name="acquireIncrement" value="${bonecp.acquireIncrement}" />
-		<!-- 缓存prepared statements的大小，默认值：0 -->
+		缓存prepared statements的大小，默认值：0
 		<property name="statementsCacheSize" value="${bonecp.statementsCacheSize}" />
 	</bean>
 
-	<!--数据源定义，采用BoneCP连接池 ,业务配置服务数据库 -->
+	数据源定义，采用BoneCP连接池 ,业务配置服务数据库
 	<bean id="JkDataSource" parent="parentDataSource"
 		class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.jk.driver}"></property>
 		<property name="jdbcUrl" value="${jdbc.jk.url}"></property>
 		<property name="username" value="${jdbc.jk.username}"></property>
 		<property name="password" value="${jdbc.jk.password}"></property>
-		<!-- 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0 -->
+		检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0
 		<property name="idleConnectionTestPeriodInMinutes" value="${bonecp.idleConnectionTestPeriodInMinutes}"></property>
-		<!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0 -->
+		连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0
 		<property name="idleMaxAgeInMinutes" value="${bonecp.idleMaxAgeInMinutes}" />
-		<!-- 每个分区最大的连接数 -->
+		每个分区最大的连接数
 		<property name="maxConnectionsPerPartition" value="${bonecp.maxConnectionsPerPartition}" />
-		<!-- 每个分区最小的连接数 -->
+		每个分区最小的连接数
 		<property name="minConnectionsPerPartition" value="${bonecp.minConnectionsPerPartition}" />
-		<!-- 分区数 ，默认值2，最小1，推荐3-4，视应用而定 -->
+		分区数 ，默认值2，最小1，推荐3-4，视应用而定
 		<property name="partitionCount" value="${bonecp.partitionCount}" />
-		<!-- 每次去拿数据库连接的时候一次性要拿几个,默认值：2 -->
+		每次去拿数据库连接的时候一次性要拿几个,默认值：2
 		<property name="acquireIncrement" value="${bonecp.acquireIncrement}" />
-		<!-- 缓存prepared statements的大小，默认值：0 -->
+		缓存prepared statements的大小，默认值：0
 		<property name="statementsCacheSize" value="${bonecp.statementsCacheSize}" />
 	</bean>
 
 
 
-	<!--A版hive数据源定义，采用BoneCP连接池 ,业务配置服务数据库 -->
+	A版hive数据源定义，采用BoneCP连接池 ,业务配置服务数据库
 	<bean id="HiveADataSource" parent="parentDataSource"
 		class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.hiveA.driver}"></property>
 		<property name="jdbcUrl" value="${jdbc.hiveA.url}"></property>
 		<property name="username" value="${jdbc.hiveA.username}"></property>
 		<property name="password" value="${jdbc.hiveA.password}"></property>
-		<!-- 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0 -->
+		检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0
 		<property name="idleConnectionTestPeriodInMinutes"
 			value="${bonecp.hive.idleConnectionTestPeriodInMinutes}"></property>
-		<!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0 -->
+		连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0
 		<property name="idleMaxAgeInMinutes" value="${bonecp.hive.idleMaxAgeInMinutes}" />
-		<!-- 每个分区最大的连接数 -->
+		每个分区最大的连接数
 		<property name="maxConnectionsPerPartition" value="${bonecp.hive.maxConnectionsPerPartition}" />
-		<!-- 每个分区最小的连接数 -->
+		每个分区最小的连接数
 		<property name="minConnectionsPerPartition" value="${bonecp.hive.minConnectionsPerPartition}" />
-		<!-- 分区数 ，默认值2，最小1，推荐3-4，视应用而定 -->
+		分区数 ，默认值2，最小1，推荐3-4，视应用而定
 		<property name="partitionCount" value="${bonecp.hive.partitionCount}" />
-		<!-- 每次去拿数据库连接的时候一次性要拿几个,默认值：2 -->
+		每次去拿数据库连接的时候一次性要拿几个,默认值：2
 		<property name="acquireIncrement" value="${bonecp.hive.acquireIncrement}" />
-		<!-- 缓存prepared statements的大小，默认值：0 -->
+		缓存prepared statements的大小，默认值：0
 		<property name="statementsCacheSize" value="${bonecp.hive.statementsCacheSize}" />
 	</bean>
 
-	<!--B版hive数据源定义，采用BoneCP连接池 ,业务配置服务数据库 -->
+	B版hive数据源定义，采用BoneCP连接池 ,业务配置服务数据库
 	<bean id="HiveBDataSource" parent="parentDataSource"
 		class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.hiveB.driver}"></property>
 		<property name="jdbcUrl" value="${jdbc.hiveB.url}"></property>
 		<property name="username" value="${jdbc.hiveB.username}"></property>
 		<property name="password" value="${jdbc.hiveB.password}"></property>
-		<!-- 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0 -->
+		检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0
 		<property name="idleConnectionTestPeriodInMinutes"
 			value="${bonecp.hive.idleConnectionTestPeriodInMinutes}"></property>
-		<!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0 -->
+		连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0
 		<property name="idleMaxAgeInMinutes" value="${bonecp.hive.idleMaxAgeInMinutes}" />
-		<!-- 每个分区最大的连接数 -->
+		每个分区最大的连接数
 		<property name="maxConnectionsPerPartition" value="${bonecp.hive.maxConnectionsPerPartition}" />
-		<!-- 每个分区最小的连接数 -->
+		每个分区最小的连接数
 		<property name="minConnectionsPerPartition" value="${bonecp.hive.minConnectionsPerPartition}" />
-		<!-- 分区数 ，默认值2，最小1，推荐3-4，视应用而定 -->
+		分区数 ，默认值2，最小1，推荐3-4，视应用而定
 		<property name="partitionCount" value="${bonecp.hive.partitionCount}" />
-		<!-- 每次去拿数据库连接的时候一次性要拿几个,默认值：2 -->
+		每次去拿数据库连接的时候一次性要拿几个,默认值：2
 		<property name="acquireIncrement" value="${bonecp.hive.acquireIncrement}" />
-		<!-- 缓存prepared statements的大小，默认值：0 -->
+		缓存prepared statements的大小，默认值：0
 		<property name="statementsCacheSize" value="${bonecp.hive.statementsCacheSize}" />
 	</bean>
 
-	<!--数据源定义，采用BoneCP连接池 ,神通数据库 -->
+	数据源定义，采用BoneCP连接池 ,神通数据库
 	<bean id="LogClusterDataSource" parent="parentDataSource"
 		class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.log.cluster.driver}"></property>
 		<property name="jdbcUrl" value="${jdbc.log.cluster.url}"></property>
 		<property name="username" value="${jdbc.log.cluster.username}"></property>
 		<property name="password" value="${jdbc.log.cluster.password}"></property>
-		<!-- 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0 -->
+		检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0
 		<property name="idleConnectionTestPeriodInMinutes" value="${bonecp.cluster.idleConnectionTestPeriodInMinutes}"></property>
-		<!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0 -->
+		连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0
 		<property name="idleMaxAgeInMinutes" value="${bonecp.cluster.idleMaxAgeInMinutes}" />
-		<!-- 每个分区最大的连接数 -->
+		每个分区最大的连接数
 		<property name="maxConnectionsPerPartition" value="${bonecp.cluster.maxConnectionsPerPartition}" />
-		<!-- 每个分区最小的连接数 -->
+		每个分区最小的连接数
 		<property name="minConnectionsPerPartition" value="${bonecp.cluster.minConnectionsPerPartition}" />
-		<!-- 分区数 ，默认值2，最小1，推荐3-4，视应用而定 -->
+		分区数 ，默认值2，最小1，推荐3-4，视应用而定
 		<property name="partitionCount" value="${bonecp.cluster.partitionCount}" />
-		<!-- 每次去拿数据库连接的时候一次性要拿几个,默认值：2 -->
+		每次去拿数据库连接的时候一次性要拿几个,默认值：2
 		<property name="acquireIncrement" value="${bonecp.cluster.acquireIncrement}" />
-		<!-- 缓存prepared statements的大小，默认值：0 -->
+		缓存prepared statements的大小，默认值：0
 		<property name="statementsCacheSize" value="${bonecp.cluster.statementsCacheSize}" />
 	</bean>
 
@@ -246,28 +246,28 @@
 
 
 
-	<!--测试数据源,后期会删除 -->
+	测试数据源,后期会删除
 	<bean id="TestDataSource" parent="parentDataSource"
 		class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.test.driver}"></property>
 		<property name="jdbcUrl" value="${jdbc.test.url}"></property>
 		<property name="username" value="${jdbc.test.username}"></property>
 		<property name="password" value="${jdbc.test.password}"></property>
-		<!-- 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0 -->
+		检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0
 		<property name="idleConnectionTestPeriodInMinutes" value="${bonecp.idleConnectionTestPeriodInMinutes}"></property>
-		<!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0 -->
+		连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0
 		<property name="idleMaxAgeInMinutes" value="${bonecp.idleMaxAgeInMinutes}" />
-		<!-- 每个分区最大的连接数 -->
+		每个分区最大的连接数
 		<property name="maxConnectionsPerPartition" value="${bonecp.maxConnectionsPerPartition}" />
-		<!-- 每个分区最小的连接数 -->
+		每个分区最小的连接数
 		<property name="minConnectionsPerPartition" value="${bonecp.minConnectionsPerPartition}" />
-		<!-- 分区数 ，默认值2，最小1，推荐3-4，视应用而定 -->
+		分区数 ，默认值2，最小1，推荐3-4，视应用而定
 		<property name="partitionCount" value="${bonecp.partitionCount}" />
-		<!-- 每次去拿数据库连接的时候一次性要拿几个,默认值：2 -->
+		每次去拿数据库连接的时候一次性要拿几个,默认值：2
 		<property name="acquireIncrement" value="${bonecp.acquireIncrement}" />
-		<!-- 缓存prepared statements的大小，默认值：0 -->
+		缓存prepared statements的大小，默认值：0
 		<property name="statementsCacheSize" value="${bonecp.statementsCacheSize}" />
-	</bean>
+	</bean> -->
 
 
 
@@ -277,15 +277,15 @@
 			<map key-type="java.lang.String">
 				<entry value-ref="DevlopDataSource" key="dataSourceA"></entry>
 				<entry value-ref="ProductDataSource" key="dataSourceB"></entry>
-				<entry value-ref="LogDataSource" key="dataSourceC"></entry>
-				<!--测试数据源,后期会删除 -->
+				<!-- <entry value-ref="LogDataSource" key="dataSourceC"></entry>
+				测试数据源,后期会删除
 				<entry value-ref="TestDataSource" key="dataSourceD"></entry>
 				<entry value-ref="JkDataSource" key="dataSourceE"></entry>
 
 				<entry value-ref="LogADataSource" key="dataSourceF"></entry>
 				<entry value-ref="LogCDataSource" key="dataSourceG"></entry>
 				
-				<entry value-ref="LogClusterDataSource" key="dataSourceH"></entry>
+				<entry value-ref="LogClusterDataSource" key="dataSourceH"></entry> -->
 
 			</map>
 		</property>
