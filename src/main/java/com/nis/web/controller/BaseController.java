@@ -26,6 +26,14 @@ import com.nis.web.service.OfficeService;
 import com.nis.web.service.RoleService;
 import com.nis.web.service.SystemService;
 import com.nis.web.service.UserService;
+import com.nis.web.service.configuration.AppCfgService;
+import com.nis.web.service.configuration.FtpCfgService;
+import com.nis.web.service.configuration.IpCfgService;
+import com.nis.web.service.configuration.MailCfgService;
+import com.nis.web.service.configuration.MediaCfgService;
+import com.nis.web.service.configuration.SslCfgService;
+import com.nis.web.service.configuration.TunnelCfgService;
+import com.nis.web.service.configuration.WebCfgService;
 
 public class BaseController {
 	
@@ -56,6 +64,29 @@ public class BaseController {
 	@Autowired 
 	protected DictService dictService;
 	
+	@Autowired 
+	protected IpCfgService ipCfgService;
+	
+	@Autowired 
+	protected WebCfgService webCfgService;
+	
+	@Autowired 
+	protected MailCfgService mailCfgService;
+	
+	@Autowired 
+	protected FtpCfgService ftpCfgService;
+	
+	@Autowired 
+	protected TunnelCfgService tunnCfgService;
+	
+	@Autowired 
+	protected SslCfgService sslCfgService;
+	
+	@Autowired 
+	protected MediaCfgService mediaCfgService;
+	
+	@Autowired 
+	protected AppCfgService appCfgService;
 	
 	protected final Logger logger = Logger.getLogger(this.getClass());
 	
