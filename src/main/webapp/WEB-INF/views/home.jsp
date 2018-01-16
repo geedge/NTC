@@ -41,8 +41,8 @@ h3{color:#ffffff;margin:30px 0px 0px 10px;}
 			  			<c:if test="${menu.href != null && menu.href != ''}" var="leafNodeFlag">
 				  			<li> 
 					  			 <a href="${ctx}${menu.href}" id="${menu.id}" target="mainFrame" class="${idxStatus.index eq 0 ? 'selected' : ''}">
-					  				<img src="${ctxStatic}/images/${menu.icon}.png" title="${menu.name }" />
-					  				<h2>${menu.name }</h2>
+					  				<img src="${ctxStatic}/images/${menu.icon}.png" title="<spring:message code="${menu.code}"></spring:message>" />
+					  				<h2><%-- ${menu.name } --%><spring:message code="${menu.code}"></spring:message></h2>
 				  				</a>
 				  			</li>
 				  		</c:if>
@@ -50,8 +50,10 @@ h3{color:#ffffff;margin:30px 0px 0px 10px;}
 				  		<c:if test="${!leafNodeFlag }">
 				  			<li>
 				  				<a href="javascript:void(0);" id="${menu.id}"  class="${idxStatus.index eq 0 ? 'selected' : ''}">
-				  					<img src="${ctxStatic}/images/${menu.icon}.png" title="${menu.name}" />
-				  					<h2>${menu.name}</h2>
+				  					<img src="${ctxStatic}/images/${menu.icon}.png" title="<spring:message code="${menu.code}"></spring:message>" />
+				  					<h2><%-- ${menu.name} --%>
+				  						<spring:message code="${menu.code}"></spring:message>
+				  					</h2>
 				  				</a>
 				  			</li>
 				  		</c:if>
@@ -66,20 +68,20 @@ h3{color:#ffffff;margin:30px 0px 0px 10px;}
 			            
 		    <div class="topright">    
 			    <ul>
-				    <li><a href="${pageContext.request.contextPath}/"  title="访问网站主页"><i class="icon-home"></i> 首页</a></li>
-				    <li><a href="#"><i class="icon-question-sign"></i> 帮助</a></li>
-				    <li><a href="${pageContext.request.contextPath }/logout" title="退出登录"><i class="icon-signout"></i> 退出</a></li>
+				    <li><a href="${pageContext.request.contextPath}/"  title="访问网站主页"><i class="icon-home"></i><spring:message code="home"></spring:message></a></li>
+				    <li><a href="#"><i class="icon-question-sign"></i> <spring:message code="help"></spring:message></a></li>
+				    <li><a href="${pageContext.request.contextPath }/logout" title="退出登录"><i class="icon-signout"></i> <spring:message code="exit"></spring:message></a></li>
 			    </ul>
 		     
 		    	<div class="user">
 		    		  
 					<ul  class="nav pull-right">
 		              	<li id="userInfo" class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#" title="个人信息"><i class="icon-user"></i> 您好,${fns:getUser().name}&nbsp;<span id="notifyNum" class="label label-info hide"></span><b class="caret"></b></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" title="个人信息"><i class="icon-user"></i> <spring:message code="hi"></spring:message>,${fns:getUser().name}&nbsp;<span id="notifyNum" class="label label-info hide"></span><b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="${ctx}/sys/user/info" target="mainFrame"><i class="icon-user"></i>&nbsp; 个人信息</a></li>
-								<li><a href="${ctx}/sys/user/modifyPwd" target="mainFrame"><i class="icon-lock"></i>&nbsp;  修改密码</a></li>
-								<li><a href="${ctx}oa/oaNotify/self" target="mainFrame"><i class="icon-bell"></i>&nbsp;  我的通知 <span id="notifyNum2" class="label label-info hide"></span></a></li>
+								<li><a href="${ctx}/sys/user/info" target="mainFrame"><i class="icon-user"></i>&nbsp; <spring:message code="userInfo"></spring:message></a></li>
+								<li><a href="${ctx}/sys/user/modifyPwd" target="mainFrame"><i class="icon-lock"></i>&nbsp; <spring:message code="updatePwd"></spring:message></a></li>
+								<li><a href="${ctx}oa/oaNotify/self" target="mainFrame"><i class="icon-bell"></i>&nbsp; <spring:message code="notify"></spring:message> <span id="notifyNum2" class="label label-info hide"></span></a></li>
 							</ul>
 						 </li>
 						 
@@ -93,6 +95,9 @@ h3{color:#ffffff;margin:30px 0px 0px 10px;}
 								</c:forEach>
 								
 								<li><a href="javascript:cookie('tabmode','${tabmode eq '1' ? '0' : '1'}');location=location.href">${tabmode eq '1' ? '关闭' : '开启'}页签模式</a></li>
+								<li><a href="${pageContext.request.contextPath}/language?language=en">英语</a></li>
+								<li><a href="${pageContext.request.contextPath}/language?language=zh_CN">中文</a></li>
+								<li><a href="${pageContext.request.contextPath}/language?language=ru">俄文</a></li>
 							</ul>
 							<!--[if lte IE 6]><script type="text/javascript">$('#themeSwitch').hide();</script><![endif]-->
 						</li>
@@ -123,14 +128,20 @@ h3{color:#ffffff;margin:30px 0px 0px 10px;}
           			<c:if test="${not empty menu.children }">
           				 
           				 <div id="menu-${menu.id }" class="accordion ${idxStatus.index eq 0 ? '' : 'hide'}">
-          				 	<div class="lefttop"><span></span>${menu.name }</div>
+          				 	<div class="lefttop"><span></span><%-- ${menu.name } --%>
+          				 	<spring:message code="${menu.code}"></spring:message></div>
           				 		<dl class="leftmenu">
-		          				 	
+		          				 	<%-- <dd><div id="menu-0-0" class="title"><i class="icon-check" ></i>
+		          				 		<a id="menu-81-70" data-id="70" data-name="国际化" href="${pageContext.request.contextPath}/something" target="mainFrame" jerichotabindex="0">示例</a>
+		          				 		</div>
+		          				 	</dd> --%>
 		          				 	<c:forEach  items="${menu.children}" var="secondMenu">
 		          				 			<dd>
 		          				 				 <div id="menu-${menu.id }-${secondMenu.id}" class="title">
 		          				 				 	<img src="${ctxStatic}/images/${secondMenu.icon}.png" title="${secondMenu.name }"/>
-											    	<%-- <span class="${secondMenu.icon } icon-white"></span> --%>${secondMenu.name} 
+											    	<%-- <span class="${secondMenu.icon } icon-white"></span> --%>
+											    	<%-- ${secondMenu.name} --%>
+											    	<spring:message code="${secondMenu.code}"></spring:message> 
 											     </div>
 						                      	 <ul class="menuson">
 											       
@@ -141,7 +152,10 @@ h3{color:#ffffff;margin:30px 0px 0px 10px;}
 													    	 <li>
 														    	 <span class="${not empty thirdMenu.icon?thirdMenu.icon:'icon-hide'} icon-white"></span>
 														    	 <a  id="menu-${menu.id }-${secondMenu.id}-${thirdMenu.id}" data-id="${thirdMenu.id}" data-name="${menu.name }-${secondMenu.name}-${thirdMenu.name}"
-														    	 href="${ctx}${thirdMenu.href}" target="mainFrame">${thirdMenu.name }<i></i></a>
+														    	 href="${ctx}${thirdMenu.href}" target="mainFrame">
+														    	 <%-- ${thirdMenu.name } --%>
+														    	 <spring:message code="${thirdMenu.code}"></spring:message>
+														    	 <i></i></a>
 													    	 </li>
 													   		
 													    </c:if>
@@ -181,7 +195,9 @@ h3{color:#ffffff;margin:30px 0px 0px 10px;}
 			          				 	<c:if test="${not empty secondMenu.href and secondMenu.quickAction ne 0}">
 								  			<c:if test="${secondMenu.quickAction==1}">
 								  				<li class="${secondMenu.menuBg }"> 
-									  				<a  href="javascript:void(0);"  onclick="page_turn('${menu.id}'+'_'+'${secondMenu.id}')"> <i class="${secondMenu.icon }"></i> ${secondMenu.name } 
+									  				<a  href="javascript:void(0);"  onclick="page_turn('${menu.id}'+'_'+'${secondMenu.id}')"> <i class="${secondMenu.icon }"></i> 
+									  				<%-- ${secondMenu.name } --%>
+									  				<spring:message code="${secondMenu.code}"></spring:message> 
 									  					<c:if test="${secondMenu.name eq '待办事项'}"><span id="notifyWorkedOption" class="label label-important hide"></span></c:if>
 									  				</a> 
 								  				</li>
@@ -189,7 +205,10 @@ h3{color:#ffffff;margin:30px 0px 0px 10px;}
 								  			
 								  			<c:if test="${secondMenu.quickAction==2}">
 								  				<li class="${secondMenu.menuBg } span3"> <a  href="javascript:void(0);"  onclick="page_turn('${menu.id}'+'_'+'${secondMenu.id}')"> 
-								  				<i class="${secondMenu.icon }"></i> ${secondMenu.name } <c:if test="${secondMenu.name eq '待办事项'}"><span id="notifyWorkedOption" class="label label-important hide"></span></c:if></a> </li>
+								  				<i class="${secondMenu.icon }"></i> 
+								  				<%-- ${secondMenu.name } --%>
+								  				<spring:message code="${secondMenu.code}"></spring:message> 
+								  				<c:if test="${secondMenu.name eq '待办事项'}"><span id="notifyWorkedOption" class="label label-important hide"></span></c:if></a> </li>
 								  			</c:if>
 								  		</c:if>		
 													 		
@@ -197,7 +216,9 @@ h3{color:#ffffff;margin:30px 0px 0px 10px;}
 											  <c:if test="${not empty thirdMenu.href and thirdMenu.quickAction ne 0}">
 										  			<c:if test="${thirdMenu.quickAction==1}">
 										  				<li class="${thirdMenu.menuBg }"> 
-										  					<a  href="javascript:void(0);"  onclick="page_turn('${menu.id}'+'_'+'${secondMenu.id}'+'_'+'${thirdMenu.id}')"> <i class="${thirdMenu.icon }"></i> ${thirdMenu.name } 
+										  					<a  href="javascript:void(0);"  onclick="page_turn('${menu.id}'+'_'+'${secondMenu.id}'+'_'+'${thirdMenu.id}')"> 
+										  					<i class="${thirdMenu.icon }"></i><%--  ${thirdMenu.name }  --%>
+										  					<spring:message code="${thirdMenu.code}"></spring:message>
 										  						<c:if test="${thirdMenu.name eq '待办事项'}"><span id="notifyWorkedOption" class="label label-important hide"></span></c:if>
 										  					</a> 
 										  				</li>
@@ -205,7 +226,9 @@ h3{color:#ffffff;margin:30px 0px 0px 10px;}
 										  			
 										  			<c:if test="${thirdMenu.quickAction==2}">
 										  				<li class="${thirdMenu.menuBg } span3"> 
-											  				<a  href="javascript:void(0);"  onclick="page_turn('${menu.id}'+'_'+'${secondMenu.id}'+'_'+'${thirdMenu.id}')"> <i class="${thirdMenu.icon }"></i> ${thirdMenu.name } 
+											  				<a  href="javascript:void(0);"  onclick="page_turn('${menu.id}'+'_'+'${secondMenu.id}'+'_'+'${thirdMenu.id}')"> <i class="${thirdMenu.icon }"></i> 
+											  				<%-- ${thirdMenu.name } --%>
+											  				<spring:message code="${thirdMenu.code}"></spring:message> 
 											  					<c:if test="${thirdMenu.name eq '待办事项'}"><span id="notifyWorkedOption" class="label label-important hide"></span></c:if>
 											  				</a> 
 										  				</li>

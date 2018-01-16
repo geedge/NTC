@@ -18,6 +18,8 @@ public class SysMenu extends BaseEntity<SysMenu>{
     private Long parentId;
     
 	private String parentIds;
+	
+	private String code;
 
     private String name;
 
@@ -248,6 +250,14 @@ public class SysMenu extends BaseEntity<SysMenu>{
 
 	public void setParent(SysMenu parent) {
 		this.parent = parent;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 	
 }
